@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Book } from '../types/Book';
 import { books } from '../books.data';
@@ -11,7 +12,9 @@ import { books } from '../books.data';
 export class BooksComponent implements OnInit {
   books: Book[];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.getBooks();
@@ -19,6 +22,11 @@ export class BooksComponent implements OnInit {
 
   getBooks(): void {
     this.books = books;
+  }
+
+  gotoCards(book_id): void {
+    this.router.navigate(['/cards', book_id]);
+    return;
   }
 
 }
