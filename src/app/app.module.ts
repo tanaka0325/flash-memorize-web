@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { CardsComponent } from './cards/cards.component';
 import { HeaderComponent } from './header/header.component';
+import { BookComponent } from './book/book.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     BooksComponent,
     CardsComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

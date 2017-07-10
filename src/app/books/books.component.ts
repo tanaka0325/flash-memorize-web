@@ -28,8 +28,8 @@ export class BooksComponent implements OnInit {
       .then(books => this.books = books)
   }
 
-  gotoCards(book_id): void {
-    this.router.navigate(['/cards', book_id]);
+  gotoBook(book_id): void {
+    this.router.navigate(['/books', book_id]);
     return;
   }
 

@@ -21,6 +21,15 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  getBook(book_id: number): Promise<Book> {
+    return this.http.get(`${this.url}/books/${book_id}`)
+      .toPromise()
+      .then(res => {
+        return res.json() as Book
+      })
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.log('An error occurred', error);
     return Promise.reject(error.message || error);

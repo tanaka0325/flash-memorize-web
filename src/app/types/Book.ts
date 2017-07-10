@@ -1,5 +1,6 @@
 export class Book {
   id: number;
   title: string;
-  // status: number;
+  status: number;
+  description: string;
 }
