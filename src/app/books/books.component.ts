@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Book } from '../types/Book';
 import { books } from '../books.data';
 
+import { ApiService } from '../api.service';
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -13,7 +15,8 @@ export class BooksComponent implements OnInit {
   books: Book[];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -21,7 +24,8 @@ export class BooksComponent implements OnInit {
   }
 
   getBooks(): void {
-    this.books = books;
+    this.apiService.getBooks()
+      .then(books => this.books = books)
   }
 
   gotoCards(book_id): void {
